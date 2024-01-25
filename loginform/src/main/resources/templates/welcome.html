@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+
+  <style>
+    .col-10 {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
+  <body>
+    <div id="homepage">
+      <div class="row">
+        <div class="col-2 homepagecol_2">
+          <div class="dropdown">
+            <div class="dropbtn">Report</div>
+            <div class="dropdown-content">
+              <a onclick="loadContent('/api/users/PopulationReport')"
+                >Population Report</a
+              >
+              <a onclick="loadContent('/api/users/adminreport')"
+                >Admin Activity Report</a
+              >
+              <a onclick="loadContent('/api/users/RoleRightReport')"
+                >Role Right Report</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- second Column -->
+        <div th:class="'col-10'" id="dynamic-content">
+          <h2>Welcome to the Homepage</h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var initialHomepageContent =
+        document.getElementById("dynamic-content").innerHTML;
+
+      function loadContent(url) {
+        var dynamicContent = document.getElementById("dynamic-content");
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            dynamicContent.innerHTML = data;
+          })
+          .catch((error) => {
+            dynamicContent.innerHTML = "Error loading content";
+          });
+      }
+    </script>
+  </body>
+</html>

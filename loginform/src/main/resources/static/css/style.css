@@ -1,0 +1,172 @@
+/* style.css */
+
+.container {
+  background-image: url("https://img.freepik.com/free-photo/multicolored-autumn-leaves-tree-branch-close-up-generated-by-ai_188544-15038.jpg?size=626&ext=jpg&ga=GA1.1.21451118.1705942076&semt=ais");
+}
+
+.col-md-6 {
+  border: 2px solid black;
+  padding: 20px;
+  width: 30rem;
+  height: 20rem;
+  background-color: #3c2d30;
+  border-radius: 20px;
+}
+.text-center {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#loginForm {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("data:image/jpeg;base64,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");
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #007bff;
+  width: 300px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+.form-group {
+  color: #fff;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  width: 8rem;
+  height: 42px;
+  border-radius: 20px;
+  outline-style: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  position: center;
+}
+.alert-danger {
+  font-size: 20px;
+  color: red;
+  text-align: center;
+}
+
+/* My Code */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#homepage {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7c0bd;
+}
+
+.homepagecol_2 {
+  float: left;
+  background-color: #fe899c;
+  border: 1px solid #eca4b0;
+  height: 100vh;
+  width: 180px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dropbtn {
+  background-color: #af4f4c;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  position: relative;
+  display: inline-block;
+  width: 178px;
+  text-align: center;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* create table */
+h2 {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+table {
+  border: 1px solid black;
+}
+table thead tr {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+tbody tr td {
+  border: 1px solid black;
+}

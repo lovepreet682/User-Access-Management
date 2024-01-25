@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Admin Activity Report</title>
+  </head>
+  <style>
+    .tableSection {
+      font-size: 12px;
+    }
+  </style>
+  <body>
+    <h2>Admin Activity Report</h2>
+    <table th:class="tableSection">
+      <thead>
+        <tr>
+          <th>User Id</th>
+          <th>Username</th>
+          <th>Branch Code</th>
+          <th>Branch Name</th>
+          <th>Profile Name</th>
+          <th>Activity</th>
+          <th>Marker Id/Marker Name</th>
+          <th>Checker Id/Checker Name</th>
+          <th>Marker DateTime</th>
+          <th>Checker DateTime</th>
+          <th>Old Emp Name</th>
+          <th>New Emp Name</th>
+          <th>Old Profile Name</th>
+          <th>New Profile Name</th>
+          <th>Old Branch Name</th>
+          <th>New Branch Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterate over the list and generate rows -->
+        <tr th:each="report : ${adminReports}">
+          <td th:text="${report.userid}"></td>
+          <td th:text="${report.username}"></td>
+          <td th:text="${report.branchcode}"></td>
+          <td th:text="${report.branchname}"></td>
+          <td th:text="${report.profilename}"></td>
+          <td th:text="${report.activity}"></td>
+          <td th:text="${report.markeridmarkername}"></td>
+          <td th:text="${report.checkeridcheckername}"></td>
+          <td th:text="${report.markerdatetime}"></td>
+          <td th:text="${report.checkerdatetime}"></td>
+          <td th:text="${report.oldempname}"></td>
+          <td th:text="${report.newempname}"></td>
+          <td th:text="${report.oldprofilename}"></td>
+          <td th:text="${report.newprofilename}"></td>
+          <td th:text="${report.oldbranchname}"></td>
+          <td th:text="${report.newbranchname}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
