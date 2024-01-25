@@ -1,9 +1,12 @@
 package com.web.loginform.service;
 
 import com.web.loginform.model.AdminReport;
+import com.web.loginform.model.PopulationReport;
 import com.web.loginform.model.User;
 import com.web.loginform.repository.AdminRepository;
 import com.web.loginform.repository.UserRepository;
+import com.web.loginform.repository.PopulationRepositary;
+
 
 import java.util.List;
 
@@ -19,6 +22,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private AdminRepository adminRepository;
 
+    @Autowired
+    private PopulationRepositary populationRepository;
+
+
     @Override
     public User findByUsernameAndPassword(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password);
@@ -29,5 +36,12 @@ public class UserServiceImpl implements UserService {
         // System.out.println(adminRepository.findAll());
         return adminRepository.findAll();
     }
+
+    @Override
+    public List<PopulationReport> getPopulationReport() {
+        return populationRepository.findAll();
+    }
+
+   
 
 }

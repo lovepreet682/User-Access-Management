@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,14 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>User Details Table</title>
   </head>
+  <style>
+    .tableSection {
+      text-align: center;
+    }
+  </style>
   <body>
     <h2>Population Report:</h2>
-    <table>
+    <table th:class="tableSection">
       <thead>
         <tr>
           <th>User Id</th>
@@ -35,27 +40,25 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Add your data rows here -->
-        <tr>
-          <td>1</td>
-          <td>john_doe</td>
-          <td>12345</td>
-          <td>BC123</td>
-          <td>Main Branch</td>
-          <td>D001</td>
-          <td>Development</td>
-          <td>Profile1</td>
-          <td>Active</td>
-          <td>2022-01-01 10:30:00</td>
-          <td>Marker123</td>
-          <td>Marker Name</td>
-          <td>2022-01-02 14:45:00</td>
-          <td>12345</td>
-          <td>BC123</td>
-          <td>Main Branch</td>
-          <td>D001</td>
+        <!-- Iterate over the userDetailsList and generate rows -->
+        <tr th:each="userDetail : ${populationreports}">
+          <td th:text="${userDetail.id}"></td>
+          <td th:text="${userDetail.username}"></td>
+          <td th:text="${userDetail.employeecode}"></td>
+          <td th:text="${userDetail.branchcode}"></td>
+          <td th:text="${userDetail.branchname}"></td>
+          <td th:text="${userDetail.departmentcode}"></td>
+          <td th:text="${userDetail.departmentname}"></td>
+          <td th:text="${userDetail.profile1}"></td>
+          <td th:text="${userDetail.status1}"></td>
+          <td th:text="${userDetail.creationdatetime}"></td>
+          <td th:text="${userDetail.lastmodifiedmarkerid}"></td>
+          <td th:text="${userDetail.markerdatetime}"></td>
+          <td th:text="${userDetail.lastmodifiedcheckerid}"></td>
+          <td th:text="${userDetail.checkerdatetime}"></td>
+          <td th:text="${userDetail.disableddatetime}"></td>
+          <td th:text="${userDetail.profileenddatetime}"></td>
         </tr>
-        <!-- Add more rows as needed -->
       </tbody>
     </table>
   </body>

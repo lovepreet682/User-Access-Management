@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.web.loginform.model.AdminReport;
+import com.web.loginform.model.PopulationReport;
 import com.web.loginform.service.UserServiceImpl;
 
 @Controller
@@ -43,6 +44,13 @@ public class WelcomeController {
         List<AdminReport> reports = userServiceImpl.getAllReport();
         model.addAttribute("adminReports", reports);
         return "AdminActivityReport";
+    }
+
+    @GetMapping("/populationreport")
+    public String populationReport(Model model) {
+        List<PopulationReport> reports = userServiceImpl.getPopulationReport();
+        model.addAttribute("populationreports", reports);
+        return "PopulationReport";
     }
 
 }
