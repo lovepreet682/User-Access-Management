@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.web.loginform.model.AdminReport;
 import com.web.loginform.model.PopulationReport;
+import com.web.loginform.model.RoleReport;
 import com.web.loginform.service.UserServiceImpl;
 
 @Controller
@@ -44,6 +45,14 @@ public class WelcomeController {
         List<AdminReport> reports = userServiceImpl.getAllReport();
         model.addAttribute("adminReports", reports);
         return "AdminActivityReport";
+    }
+
+    // Role Admin Report
+    @GetMapping("/roleright")
+    public String roleAdminReport(Model model) {
+        List<RoleReport> reports = userServiceImpl.getRoleReport();
+        model.addAttribute("rolereport", reports);
+        return "RoleRightReport";
     }
 
     @GetMapping("/populationreport")

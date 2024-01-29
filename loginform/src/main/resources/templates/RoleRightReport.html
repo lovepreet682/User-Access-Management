@@ -26,18 +26,16 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Add your data rows here -->
-        <tr>
-          <td>Admin</td>
-          <td>Administrator Role</td>
-          <td>Read, Write, Delete</td>
-          <td>Full access to all modules</td>
-          <td>Yes</td>
-          <td>Active</td>
-          <td>Admin Profile</td>
-          <td>Full Access</td>
+        <tr th:each="report : ${rolereport}">
+          <td th:text="${report.roleprofiletemplatename}"></td>
+          <td th:text="${report.roleprofiletemplatedescription}"></td>
+          <td th:text="${report.rightsassignedtorole}"></td>
+          <td th:text="${report.rightsdescription}"></td>
+          <td th:text="${report.rightsassignedyn}"></td>
+          <td th:text="${report.statusofroleprofiletemplatename}"></td>
+          <td th:text="${report.profileassignedto}"></td>
+          <td th:text="${report.typeofaccess}"></td>
         </tr>
-        <!-- Add more rows as needed -->
       </tbody>
     </table>
   </body>

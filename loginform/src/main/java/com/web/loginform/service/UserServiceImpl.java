@@ -2,11 +2,12 @@ package com.web.loginform.service;
 
 import com.web.loginform.model.AdminReport;
 import com.web.loginform.model.PopulationReport;
+import com.web.loginform.model.RoleReport;
 import com.web.loginform.model.User;
 import com.web.loginform.repository.AdminRepository;
 import com.web.loginform.repository.UserRepository;
 import com.web.loginform.repository.PopulationRepositary;
-
+import com.web.loginform.repository.RoleAdminRepository;
 
 import java.util.List;
 
@@ -25,6 +26,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PopulationRepositary populationRepository;
 
+    @Autowired
+    private RoleAdminRepository roleAdminRepository;
+
 
     @Override
     public User findByUsernameAndPassword(String username, String password) {
@@ -40,6 +44,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<PopulationReport> getPopulationReport() {
         return populationRepository.findAll();
+    }
+
+    @Override
+    public List<RoleReport> getRoleReport() {
+        return roleAdminRepository.findAll();
     }
 
    
