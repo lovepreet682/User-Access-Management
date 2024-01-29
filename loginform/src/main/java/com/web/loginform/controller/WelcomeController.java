@@ -53,4 +53,9 @@ public class WelcomeController {
         return "PopulationReport";
     }
 
+    // Logout
+    @GetMapping("/logout")
+    public String LogoutPage() {
+        return "Logout";
+    }
 }

@@ -118,6 +118,7 @@ input.form-control {
   display: inline-block;
   width: 178px;
   text-align: center;
+  border: 1px solid white;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -150,7 +151,7 @@ input.form-control {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #f7aaa8;
 }
 
 /* create table */
@@ -170,3 +171,5 @@ table thead tr {
 tbody tr td {
   border: 1px solid black;
 }
+
+/* Logout */
